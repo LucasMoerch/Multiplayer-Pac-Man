@@ -6,6 +6,15 @@ import "./Canvas";
 import "./style.css";
 import "./menu";
 
+import {
+  setPacManDirection,
+  setGhostDirection,
+  startPacManMouthAnimation,
+  playPowerUpAnimation,
+  startIdleAnimation,
+  playKillAnimation
+} from './Animations'; 
+
 import { SPlayer, Pacman } from "../shared/entities";
 import { boundaryArray } from "./CollisionBlocks";
 import { fgCtx, fgCanvas, drawBackground } from "./Canvas";
@@ -110,18 +119,45 @@ window.addEventListener("keydown", (e) => {
     case "w":
     case "ArrowUp":
       currentDirection = "up";
+      setGhostDirection("ghostAqua", "up");
+      setGhostDirection("ghostBlue", "up");
+      setGhostDirection("ghostPink", "up");
+      setGhostDirection("ghostRed", "up");
+      setGhostDirection("ghostWhite", "up");
+      setGhostDirection("ghostYellow", "up");
       break;
     case "s":
     case "ArrowDown":
       currentDirection = "down";
+      // Change direction for all ghosts to 'down'
+      setGhostDirection("ghostAqua", "down");
+      setGhostDirection("ghostBlue", "down");
+      setGhostDirection("ghostPink", "down");
+      setGhostDirection("ghostRed", "down");
+      setGhostDirection("ghostWhite", "down");
+      setGhostDirection("ghostYellow", "down");
       break;
     case "a":
     case "ArrowLeft":
       currentDirection = "left";
+      // Change direction for all ghosts to 'left'
+      setGhostDirection("ghostAqua", "left");
+      setGhostDirection("ghostBlue", "left");
+      setGhostDirection("ghostPink", "left");
+      setGhostDirection("ghostRed", "left");
+      setGhostDirection("ghostWhite", "left");
+      setGhostDirection("ghostYellow", "left");
       break;
     case "d":
     case "ArrowRight":
       currentDirection = "right";
+      // Change direction for all ghosts to 'right'
+      setGhostDirection("ghostAqua", "right");
+      setGhostDirection("ghostBlue", "right");
+      setGhostDirection("ghostPink", "right");
+      setGhostDirection("ghostRed", "right");
+      setGhostDirection("ghostWhite", "right");
+      setGhostDirection("ghostYellow", "right");
       break;
     case "0":
       currentDirection = null;
